@@ -4,6 +4,7 @@ import random
 import time
 from PyQt5.QtSql import *
 from PyQt5.QtWidgets import *
+import sqlokno
 
 
 class Game():
@@ -96,11 +97,8 @@ class Game():
         # дефолтный случай отображаем результат слева сверху
         if choice == 1:
             s_rect.midtop = (80, 10)
-        # при game_overe отображаем результат по центру
-        # под надписью game over
         else:
             s_rect.midtop = (360, 120)
-        # рисуем прямоугольник поверх surface
         self.play_surface.blit(s_surf, s_rect)
 
     def game_over(self):
@@ -116,6 +114,7 @@ class Game():
         pygame.display.flip()
         time.sleep(3)
         pygame.quit()
+        window = sqlokno.main()
         sys.exit()
 
 

@@ -24,7 +24,7 @@ class Example(QWidget):
         self.setWindowTitle('Пример работы с QtSql')
 
 
-if __name__ == '__main__':
+def main():
     app = QApplication(sys.argv)
     print(app)
     ex = Example()
